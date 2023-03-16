@@ -2,11 +2,11 @@ export class MyDate {
   constructor(
     public year: number = 1993,
     public month: number = 7,
-    private day: number = 9
+    private _day: number = 9
   ) {}
 
   public printFormat(): string {
-    const day = this.addPading(this.day);
+    const day = this.addPading(this._day);
     const month = this.addPading(this.month);
     return `${day}/${month}/${this.year}`;
   }
@@ -20,7 +20,7 @@ export class MyDate {
 
   public add(amount: number, type: "days" | "month" | "years") {
     if (type === "days") {
-      this.day += amount;
+      this._day += amount;
     } else if (type === "month") {
       this.month += amount;
     } else if (type === "years") {
@@ -28,13 +28,19 @@ export class MyDate {
     }
   }
 
-  getDay() {
-    return this.day;
+  get day() {
+    return this._day;
+  }
+
+  get isLeapYear(): boolean {
+    if (this.year % 400 === 0) return true;
+    if (this.year % 100 === 0) return false;
+    return this.year % 4 === 0;
   }
 }
 
 const myDate = new MyDate(1986, 8, 12);
-console.log("🚀 ~ file: 05-constructor.ts:37 ~ myDate:", myDate);
+console.log("🚀 ~ file: 06-getters.ts:37 ~ myDate:", myDate);
 
-const myDate2 = new MyDate();
-console.log("🚀 ~ file: 05-constructor.ts:40 ~ myDate2:", myDate2);
+console.log("day", myDate.day);
+console.log("isLeapYear", myDate.isLeapYear);
