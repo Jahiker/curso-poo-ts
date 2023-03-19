@@ -1,1 +1,26 @@
-## POO CON TYPESCRIPT
+# POO CON TYPESCRIPT
+
+## PUBLIC
+-- la propiedad o metodo puede ser accedida o modificada fuera de la clase al hacer una instancias
+
+## PRIVATE
+-- la propiedad o metodo solo puede ser accedida 0 modificada dentro de la misma clase
+
+## PROTECTED
+-- la propiedad o metodo solo puede ser accedida o modificada dentro de la clase o las clases que son instancias de la misma
+
+## STACTIC
+-- la propiedad o metodo puede ser accedida o modificada fuera de la clase sin necesidad de realizar una instancia
+
+## ONLYREAD
+-- la propiedad o metodo puede ser accedida fuera de la clase mas no puede ser modificada
+
+## INTERFACES
+-- Es una especie de contrato al que se subcriben las clases que implementan la interface y este indica cuales propiedades y metodos debe contener la clase obligatoriamente.
+
+## ABSTACT CLASS
+-- Una clase abstracta no permite instancias de si misma, solo de otras clases que extienden de ella
+
+## SINGLETON
+-- Solo permite realizar una unica instancia de una clase
+-- Para esto utilizamos los constructores privados, para prevenir y controlar la creacion de instancias de la clase
