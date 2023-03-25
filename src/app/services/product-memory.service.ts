@@ -1,9 +1,14 @@
 import { Product } from "../models/product.model";
 import { CreateProductDto, UpdateProductDto } from "../dtos/product.dto";
 import { faker } from "@faker-js/faker";
+import { ProductService } from "../models/product-service.model";
 
-export class ProductMemoryService {
+export class ProductMemoryService implements ProductService {
   private products: Product[] = [];
+
+  getAll() {
+    return this.products;
+  }
 
   create(data: CreateProductDto): Product {
     const newProduct: Product = {
@@ -29,7 +34,7 @@ export class ProductMemoryService {
     return product;
   }
 
-  updateProduct(id: Product["id"], changes: UpdateProductDto): Product {
+  update(id: Product["id"], changes: UpdateProductDto): Product {
     const index = this.products.findIndex((item) => item.id === id);
     const prevData = this.products[index];
     this.products[index] = {
@@ -39,7 +44,7 @@ export class ProductMemoryService {
     return this.products[index];
   }
 
-  findOne(id: Product["id"]) {
-    return this.products.find((item) => item.id === id);
+  findOne(id: Product['id']) {
+    return this.products.find(item => item.id === id);
   }
 }
