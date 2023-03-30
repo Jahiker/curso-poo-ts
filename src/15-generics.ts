@@ -14,5 +14,3 @@ getValue<unknown[]>([]).length
 const fifi = new Dog('Fifi','Nico')
 
 getValue<Dog>(fifi).woof()
-
-
